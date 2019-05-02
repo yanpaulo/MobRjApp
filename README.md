@@ -1,4 +1,4 @@
-# Teste MOBRJ
+# MOBRJ App
 Implementation for the app as described at http://ysft.me/mobrj-pdf
 
 ## Installation instructions

@@ -13,7 +13,7 @@
         <StackLayout Style="{StaticResource ContentLayout}">
             <SearchBar Text="{Binding SearchText}" Placeholder="Buscar por Estado ou Capital" TextChanged="SearchBar_TextChanged" SearchButtonPressed="SearchBar_SearchButtonPressed"></SearchBar>
             <c:BusyIndicator></c:BusyIndicator>
-            <ListView ItemsSource="{Binding States}">
+            <ListView ItemsSource="{Binding States}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Estado}" Detail="{Binding Capital}"></TextCell>

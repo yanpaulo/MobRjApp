@@ -9,9 +9,9 @@
         <nav:RootPageMaster x:Name="MasterPage" />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage Title="Lista Simples">
+        <NavigationPage>
             <x:Arguments>
-                <pages:SimpleListPage />
+                <pages:SimpleListPage Title="Lista Simples" />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

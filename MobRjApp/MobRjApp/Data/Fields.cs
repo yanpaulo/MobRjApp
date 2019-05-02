@@ -5,7 +5,6 @@ namespace MobRjApp.Data
 {
     public class Fields
     {
-        public string Id { get; set; }
         public string Sigla { get; set; }
         public List<Attachment> Attachments { get; set; }
         public string Estado { get; set; }

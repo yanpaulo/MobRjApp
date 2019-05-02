@@ -33,8 +33,9 @@ BusyObject inherits from ObservableObject and enables the internal IBusy pattern
 
 The IBusy pattern enables a clean way to notify the UI about running tasks. If used in conjunction with the BusyIndicator control, an ActivityIndicator will be displayed to the user whenever there is some task running.
 
-Usage example:
-The following snippet will display the BusyIndicator control for 2 seconds.
+Usage example. The following snippet will display the BusyIndicator control for 2 seconds:
+
+C#
 ```cs
 public async Task LoadAsync()
 {
@@ -45,6 +46,7 @@ public async Task LoadAsync()
     } //BusyIndicator is hidden
 }
 ```
+XAML
 ```xml
 <c:BusyIndicator></c:BusyIndicator>
 ```

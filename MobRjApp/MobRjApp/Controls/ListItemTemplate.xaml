@@ -12,7 +12,7 @@
             <Image Grid.Column="0" Source="{Binding Fields.ThumbnailUrl}" WidthRequest="80" HeightRequest="56"></Image>
 
             <StackLayout Grid.Column="1">
-                <Label Text="{Binding Fields.Sigla}"></Label>
+                <Label Text="{Binding Fields.Sigla}" FontAttributes="Bold"></Label>
                 <Label Text="{Binding Fields.Capital}"></Label>
             </StackLayout>
         </Grid>

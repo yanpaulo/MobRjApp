@@ -4,6 +4,9 @@
              x:Class="MobRjApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Style x:Key="ContentLayout" TargetType="StackLayout">
+                <Setter Property="Margin" Value="12"></Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -10,7 +10,7 @@
         <vm:CachedListViewModel></vm:CachedListViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Style="{StaticResource ContentLayout}">
             <SearchBar Text="{Binding SearchText}" Placeholder="Buscar por Estado ou Capital" TextChanged="SearchBar_TextChanged" SearchButtonPressed="SearchBar_SearchButtonPressed"></SearchBar>
             <c:BusyIndicator></c:BusyIndicator>
             <ListView ItemsSource="{Binding States}">

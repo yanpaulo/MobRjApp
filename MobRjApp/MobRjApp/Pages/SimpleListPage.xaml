@@ -4,10 +4,8 @@
              xmlns:c="clr-namespace:MobRjApp.Controls"
              xmlns:vm="clr-namespace:MobRjApp.Pages"
              x:Class="MobRjApp.Pages.SimpleListPage"
-             Title="Estados"
              Appearing="ContentPage_Appearing">
     <ContentPage.BindingContext>
-        <!--Binding via XAML habilita o IntelliSense-->
         <vm:ListViewModel></vm:ListViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>

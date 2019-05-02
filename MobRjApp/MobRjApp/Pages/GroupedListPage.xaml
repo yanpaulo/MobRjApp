@@ -7,7 +7,6 @@
              Title="Estados Agrupados"
              Appearing="ContentPage_Appearing">
     <ContentPage.BindingContext>
-        <!--Binding via XAML habilita o IntelliSense-->
         <vm:GroupedListViewModel></vm:GroupedListViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>

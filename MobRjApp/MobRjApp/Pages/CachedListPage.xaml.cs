@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static MobRjApp.Pages.Utils;
 
 namespace MobRjApp.Pages
 {
@@ -21,14 +22,14 @@ namespace MobRjApp.Pages
             viewModel = (CachedListViewModel)BindingContext;
 		}
 
-        private async void ContentPage_Appearing(object sender, EventArgs e) => 
-            await viewModel.LoadAsync();
+        private async void ContentPage_Appearing(object sender, EventArgs e) =>
+            await RestRunAsync(this, viewModel.LoadAsync);
 
-        private async void SearchBar_SearchButtonPressed(object sender, EventArgs e) => 
-            await viewModel.LoadAsync();
+        private async void SearchBar_SearchButtonPressed(object sender, EventArgs e) =>
+            await RestRunAsync(this, viewModel.LoadAsync);
 
-        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) => 
-            await viewModel.DelayedLoadAsync();
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) =>
+            await RestRunAsync(this, viewModel.DelayedLoadAsync);
 
     }
 
@@ -45,7 +46,10 @@ namespace MobRjApp.Pages
 
         public string SearchText { get; set; }
 
-        public virtual async Task LoadAsync(int delay = 0)
+        public virtual async Task LoadAsync() => 
+            await LoadAsync(0);
+
+        public virtual async Task LoadAsync(int delay)
         {
             States = await _data.GetLocalStatesAsync(SearchText);
             await Task.Delay(delay);

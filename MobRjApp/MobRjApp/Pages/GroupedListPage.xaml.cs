@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static MobRjApp.Pages.Utils;
 
 namespace MobRjApp.Pages
 {
@@ -21,14 +22,14 @@ namespace MobRjApp.Pages
             viewModel = BindingContext as GroupedListViewModel;
 		}
 
-        private async void ContentPage_Appearing(object sender, EventArgs e) => 
-            await viewModel.LoadAsync();
+        private async void ContentPage_Appearing(object sender, EventArgs e) =>
+            await RestRunAsync(this, viewModel.LoadAsync);
 
-        private async void SearchBar_SearchButtonPressed(object sender, EventArgs e) => 
-            await viewModel.LoadAsync();
+        private async void SearchBar_SearchButtonPressed(object sender, EventArgs e) =>
+            await RestRunAsync(this, viewModel.LoadAsync);
 
-        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) => 
-            await viewModel.DelayedLoadAsync();
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) =>
+            await RestRunAsync(this, viewModel.DelayedLoadAsync);
 
     }
 

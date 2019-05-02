@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c="clr-namespace:MobRjApp.Controls"
+             xmlns:vm="clr-namespace:MobRjApp.Pages"
+             x:Class="MobRjApp.Pages.SimpleListPage"
+             Title="Estados"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.BindingContext>
+        <!--Binding via XAML habilita o IntelliSense-->
+        <vm:ListViewModel></vm:ListViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Text="{Binding SearchText}" Placeholder="Buscar por Estado ou Capital" TextChanged="SearchBar_TextChanged" SearchButtonPressed="SearchBar_SearchButtonPressed"></SearchBar>
+            <c:BusyIndicator></c:BusyIndicator>
+            <ListView ItemsSource="{Binding States}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <c:ListItemTemplate></c:ListItemTemplate>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

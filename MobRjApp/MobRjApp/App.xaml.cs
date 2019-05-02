@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MobRjApp.Pages;
+using MobRjApp.Pages.Navigation;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +13,7 @@ namespace MobRjApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new RootPage();
         }
 
         protected override void OnStart()

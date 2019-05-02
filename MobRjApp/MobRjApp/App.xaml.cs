@@ -1,4 +1,5 @@
-﻿using MobRjApp.Pages;
+﻿using MobRjApp.Data;
+using MobRjApp.Pages;
 using MobRjApp.Pages.Navigation;
 using System;
 using Xamarin.Forms;
@@ -18,7 +19,7 @@ namespace MobRjApp
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            DataService.Instance.Init();
         }
 
         protected override void OnSleep()

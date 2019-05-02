@@ -35,6 +35,7 @@ namespace MobRjApp.Pages.Navigation
                 {
                     new RootPageMenuItem { Title = "Lista Simples", TargetType = typeof(SimpleListPage) },
                     new RootPageMenuItem { Title = "Lista Agrupada", TargetType = typeof(GroupedListPage) },
+                    new RootPageMenuItem { Title = "Lista com cache", TargetType = typeof(CachedListPage) },
                 });
             }
             

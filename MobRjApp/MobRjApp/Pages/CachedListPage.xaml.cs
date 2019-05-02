@@ -11,14 +11,14 @@ using Xamarin.Forms.Xaml;
 namespace MobRjApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SimpleListPage : ContentPage
+	public partial class CachedListPage : ContentPage
 	{
-        private readonly ListViewModel viewModel;
+        private readonly CachedListViewModel viewModel;
 
-		public SimpleListPage ()
+		public CachedListPage()
 		{
 			InitializeComponent ();
-            viewModel = BindingContext as ListViewModel;
+            viewModel = (CachedListViewModel)BindingContext;
 		}
 
         private async void ContentPage_Appearing(object sender, EventArgs e) => 
@@ -32,12 +32,12 @@ namespace MobRjApp.Pages
 
     }
 
-    class ListViewModel : BusyObject
+    class CachedListViewModel : BusyObject
     {
         private readonly DataService _data = DataService.Instance;
-        private List<State> _states;
+        private List<LocalState> _states;
 
-        public List<State> States
+        public List<LocalState> States
         {
             get { return _states; }
             set { _states = value; OnPropertyChanged(); }
@@ -45,18 +45,19 @@ namespace MobRjApp.Pages
 
         public string SearchText { get; set; }
 
-        public virtual async Task LoadAsync()
+        public virtual async Task LoadAsync(int delay = 0)
         {
+            States = await _data.GetLocalStatesAsync(SearchText);
+            await Task.Delay(delay);
             using (BusyState())
             {
-                States = await _data.GetStatesAsync(SearchText);
+                States = await _data.FetchLocalStatesAsync(SearchText);
             }
         }
 
         public async Task DelayedLoadAsync()
         {
-            await Task.Delay(500);
-            await LoadAsync();
+            await LoadAsync(500);
         }
     }
 }

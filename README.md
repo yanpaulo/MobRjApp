@@ -35,7 +35,7 @@ The IBusy pattern enables a clean way to notify the UI about running tasks. If u
 
 Usage example. The following snippet will display the BusyIndicator control for 2 seconds:
 
-C#
+`C#`
 ```cs
 public async Task LoadAsync()
 {
@@ -46,7 +46,7 @@ public async Task LoadAsync()
     } //BusyIndicator is hidden
 }
 ```
-XAML
+`XAML`
 ```xml
 <c:BusyIndicator></c:BusyIndicator>
 ```

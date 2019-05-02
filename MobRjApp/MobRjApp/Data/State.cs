@@ -2,6 +2,9 @@
 
 namespace MobRjApp.Data
 {
+    /// <summary>
+    /// Domain class
+    /// </summary>
     public class State
     {
         public string Id { get; set; }

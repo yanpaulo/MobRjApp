@@ -2,6 +2,9 @@
 
 namespace MobRjApp.Data
 {
+    /// <summary>
+    /// Domain class
+    /// </summary>
     public class Thumbnail
     {
         public string Url { get; set; }

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace MobRjApp.Extensions
 {
+    /// <summary>
+    /// Extension methods for the Object class.
+    /// </summary>
     public static class ObjectExtensions
     {
         /// <summary>

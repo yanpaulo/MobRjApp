@@ -10,6 +10,9 @@ using Yansoft.Rest;
 
 namespace MobRjApp.Data
 {
+    /// <summary>
+    /// Singleton for data access handling.
+    /// </summary>
     public class DataService
     {
         private readonly RestHttpClient _rest = new RestHttpClient();
@@ -18,13 +21,11 @@ namespace MobRjApp.Data
 
         public static DataService Instance { get; private set; } = new DataService();
         private DataService() { }
-
+        
         public void Init()
         {
             Task.Run(async () => await _sql.CreateTableAsync<LocalState>()).Wait();
         }
-
-        
 
         public async Task<List<LocalState>> FetchLocalStatesAsync(string filter = "")
         {

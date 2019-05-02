@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MobRjApp.Controls
 {
+    /// <summary>
+    /// Should be implemented by an object that can eventually be in a busy state.
+    /// </summary>
     public interface IBusy
     {
         bool IsBusy { get; set; }

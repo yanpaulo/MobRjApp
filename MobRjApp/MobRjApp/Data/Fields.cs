@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace MobRjApp.Data
 {
+    /// <summary>
+    /// Domain class
+    /// </summary>
     public class Fields
     {
         public string Sigla { get; set; }

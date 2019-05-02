@@ -1,5 +1,8 @@
 ﻿namespace MobRjApp.Data
 {
+    /// <summary>
+    /// Domain class
+    /// </summary>
     public class Attachment
     {
         public string Id { get; set; }

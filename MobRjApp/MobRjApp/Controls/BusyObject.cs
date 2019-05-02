@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MobRjApp.Controls
 {
+    /// <summary>
+    /// Sub-class of ObservableObject with IBusy capabilities.
+    /// </summary>
     public class BusyObject : ObservableObject, IBusy
     {
         private bool isBusy;

@@ -5,8 +5,13 @@ using System.Runtime.CompilerServices;
 
 namespace MobRjApp.Controls
 {
+    /// <summary>
+    /// Object that implements INotifyPropertyChanged and exposes methods to ease the use of INotifyPropertyChanged interface.
+    /// </summary>
     public class ObservableObject : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         protected bool SetProperty<T>(
             ref T backingStore, T value,
             [CallerMemberName]string propertyName = "",
@@ -20,8 +25,6 @@ namespace MobRjApp.Controls
             OnPropertyChanged(propertyName);
             return true;
         }
-        
-        public event PropertyChangedEventHandler PropertyChanged;
         
         protected void OnPropertyChanged([CallerMemberName]string propertyName = "")
         {

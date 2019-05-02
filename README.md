@@ -12,7 +12,7 @@ http://ysft.me/mobrj-apk
 
 ### UWP
 The UWP version can be installed directly from the Microsoft Store using the following link:
-
+https://www.microsoft.com/store/r/9N8T6KNCTKX4
 
 ### iOS
 There isn't a precompiled iOS version available at this moment.
